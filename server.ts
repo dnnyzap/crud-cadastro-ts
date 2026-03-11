@@ -53,7 +53,7 @@ db.serialize(async () => {
     
     const hash = await bcrypt.hash('123456', 10);
     db.run(`INSERT INTO users (name, email, dob, photo, address, gender, password) 
-            VALUES ('Administrador', 'admin@teste.com', '1990-01-01', 'default.png', 'Rua Admin, 123', 'M', ?)`, [hash]);
+            VALUES ('Administrador', 'admin@teste.com', '1990-01-01', 'default.webp', 'Rua Admin, 123', 'Masculino', ?)`, [hash]);
 });
 
 
