@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - CRUD TS</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-light d-flex align-items-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 card p-4 shadow-sm">
+                <h3 class="text-center mb-4">Acesso ao Sistema</h3>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" id="email" class="form-control" required value="admin@teste.com">
+                    </div>
+                    <div class="mb-3">
+                        <label>Senha</label>
+                        <input type="password" id="password" class="form-control" required value="123456">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                    <div id="loginError" class="text-danger mt-2 text-center"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/dist/app.js"></script>
+</body>
+</html>

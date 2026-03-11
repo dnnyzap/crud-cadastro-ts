@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Usuários</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand">Sistema de Cadastro</span>
+            <button class="btn btn-outline-light btn-sm" onclick="logout()">Sair</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#userModal">
+            + Novo Usuário
+        </button>
+
+        <table class="table table-bordered bg-white shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>Foto</th><th>Nome</th><th>Email</th><th>Nascimento</th>
+                    <th>Endereço</th><th>Sexo</th><th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="userModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="userForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar Usuário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2"><label>Nome *</label><input type="text" id="u-name" class="form-control" required></div>
+                        <div class="mb-2"><label>Email *</label><input type="email" id="u-email" class="form-control" required></div>
+                        <div class="mb-2"><label>Data de Nascimento *</label><input type="date" id="u-dob" class="form-control" required></div>
+                        <div class="mb-2"><label>Endereço *</label><input type="text" id="u-address" class="form-control" required></div>
+                        <div class="mb-2">
+                            <label>Sexo *</label>
+                            <select id="u-gender" class="form-control" required>
+                                <option value="">Selecione...</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="mb-2"><label>Senha *</label><input type="password" id="u-password" class="form-control" required></div>
+                        <div class="mb-2"><label>Foto *</label><input type="file" id="u-photo" class="form-control" accept="image/*" required></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/app.js"></script>
+    <script>
+        
+        if (!localStorage.getItem('token')) window.location.href = '/index.html';
+        function logout() { localStorage.removeItem('token'); window.location.href = '/index.html'; }
+        window.onload = loadUsers; 
+    </script>
+</body>
+</html>

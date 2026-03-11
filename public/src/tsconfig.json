@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "None",
+    "outFile": "../dist/app.js",
+    "strict": true,
+    "lib": ["DOM", "ES6"],
+    "types": []
+  }
+}
